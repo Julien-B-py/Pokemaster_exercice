@@ -11,3 +11,18 @@ pokemons.forEach((pokemon, index) => {
         audio.play();
     })
 })
+
+// Get the autoscroll top button
+const scrollTopButton = document.getElementById("scrollTop");
+
+// Hide or show the button depending on current scroll position
+window.onscroll = () => {
+    if (document.documentElement.scrollTop > 100) {
+        scrollTopButton.style.display = "block";
+    } else {
+        scrollTopButton.style.display = "none";
+    }
+}
+
+// Scroll to top when user clicks on the button
+scrollTopButton.addEventListener("click", event => window.scrollTo({ top: 0, behavior: 'smooth' }));
