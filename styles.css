@@ -1,0 +1,315 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* ---------- CLEAR MARGIN AND PADDING ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- HTML TAGS ---------- */
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    color: #777777;
+    font-family: 'Roboto', sans-serif;
+}
+
+nav, footer {
+    background-color: #333A40;
+
+}
+
+footer {
+    color: #fff;
+    padding: 2rem;
+}
+
+/* ---------- NAV ---------- */
+
+nav {
+    color: #8095a2;
+    padding: 0.5rem 1rem;
+}
+
+nav img {
+    height: 75px;
+}
+
+nav ul {
+    display: none;
+    list-style-type: none;
+    gap: 2rem;
+}
+
+nav>div {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav a {
+    text-decoration: none;
+    color: #8095a2;
+}
+
+nav a:hover, nav i:hover {
+    color: #9eaeb8;
+}
+
+.container {
+    width: min(100%, 1000px);
+}
+
+/* ---------- HEADER ---------- */
+
+header {
+    background: url('./images/Banner.png') rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: center;
+    min-height: 450px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 12px solid #F6c33b;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(3rem, 2.8rem + 1vw, 4rem);
+    text-align: center;
+}
+
+header h2 {
+    font-family: 'Source Serif Pro', serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+}
+
+section {
+    font-family: 'Montserrat', sans-serif;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+/* ---------- SERVICES SECTION ---------- */
+
+#services {
+    margin: auto;
+}
+
+.icon {
+    background-color: #F6c33b;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#services i {
+    color: white;
+    font-size: 3rem;
+}
+
+#services p {
+    text-align: center;
+}
+
+section h2 {
+
+    text-transform: uppercase;
+    font-size: 2.5rem;
+}
+
+#services h3 {
+    font-size: 1.5rem;
+}
+
+.services {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.services>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* ---------- POKEDEX SECTION ---------- */
+
+#pokedex {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e2e2e2;
+    padding-bottom: 3rem;
+}
+
+.pokemons {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.pokemon {
+    width: min-content;
+    background-color: #fff;
+    padding: 1rem;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pokemon img {
+    width: 280px;
+    height: 300px;
+    object-fit: contain;
+    transition: transform 125ms;
+    cursor: pointer;
+}
+
+/* ---------- SEE COMPLETE POKEDEX SECTION ---------- */
+
+.more {
+    text-transform: uppercase;
+    background-color: #F6c33b;
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+.more a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.socials {
+    display: flex;
+    gap: 2rem;
+}
+
+.socials a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* ---------- RESPONSIVE ---------- */
+/* Tablets */
+@media only screen and (min-width: 768px) {
+
+    .services>div {
+        flex: 1 1 0px;
+    }
+
+    .footer-inner {
+        flex-direction: row;
+    }
+
+}
+
+/* Desktop */
+@media only screen and (min-width: 992px) {
+
+    header {
+        background-size: 100%;
+        transition: all .2s ease-in-out;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    .fa-bars {
+        display: none;
+    }
+
+    .icon:before {
+        content: "";
+        width: 100px;
+        height: 100px;
+        background-color: #ffeaaf;
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        transition: transform 250ms;
+    }
+
+
+    /* ---------- CSS ANIMATIONS ---------- */
+
+    header:hover {
+        background: url('./images/Banner.png') rgba(0, 0, 0, .8);
+        background-size: 110%;
+        background-blend-mode: multiply;
+        background-position: center;
+    }
+
+    .icon:hover::before {
+        transform: scale(1.25);
+    }
+
+    .pokemon img:hover {
+        transform: translateY(-10px);
+    }
+
+    .more a:hover .fa-chevron-right {
+        animation: lateralMove 2s ease 0s infinite normal forwards;
+    }
+
+    @keyframes lateralMove {
+
+        0%,
+        50%,
+        100% {
+            transform: translateX(0px);
+        }
+
+        25%,
+        75% {
+            transform: translateX(10px);
+        }
+    }
+
+}
