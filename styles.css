@@ -53,6 +53,7 @@ nav>div {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -66,6 +67,15 @@ nav a:hover, nav i:hover {
 
 .container {
     width: min(100%, 1000px);
+}
+
+.toggled {
+    flex-basis: 100%;
+    flex-grow: 1;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 /* ---------- HEADER ---------- */
@@ -107,6 +117,10 @@ section {
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
+}
+
+.fa-bars {
+    cursor: pointer;
 }
 
 /* ---------- SERVICES SECTION ---------- */
@@ -249,6 +263,7 @@ section h2 {
     color: #f8f9fa;
     border: none;
     box-shadow: rgba(136, 136, 136, 0.56)0px 1px 3px 0px, rgba(70, 70, 70, 0.06) 0px 1px 2px 0px;
+    border: 2px solid #c9c9c9;
 }
 
 

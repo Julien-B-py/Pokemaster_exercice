@@ -26,3 +26,12 @@ window.onscroll = () => {
 
 // Scroll to top when user clicks on the button
 scrollTopButton.addEventListener("click", event => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// Get the hamburger and the nav dropdown list
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+// Toggle dropdown list display on hamburger click
+hamburger.addEventListener("click", event => {
+    navLinks.classList.toggle("toggled");
+})
