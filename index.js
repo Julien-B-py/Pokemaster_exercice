@@ -35,3 +35,15 @@ const navLinks = document.getElementById("navLinks");
 hamburger.addEventListener("click", event => {
     navLinks.classList.toggle("toggled");
 })
+
+// Remove "toggled" class from nav dropdown list element if we switch back to desktop view if the class is present
+const resetNavLinksOnResize = () => {
+
+    if (window.matchMedia("(min-width:992px)").matches && navLinks.classList.contains("toggled")) {
+        navLinks.classList.remove("toggled");
+    }
+
+}
+
+// Call resetNavLinksOnResize function when window is resized
+window.addEventListener('resize', resetNavLinksOnResize);
