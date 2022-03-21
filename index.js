@@ -47,3 +47,8 @@ const resetNavLinksOnResize = () => {
 
 // Call resetNavLinksOnResize function when window is resized
 window.addEventListener('resize', resetNavLinksOnResize);
+
+// For each li inside nav, add an on-click listener to hide the drop down menu
+navLinks.addEventListener("click", event => {
+    navLinks.classList.remove("toggled");
+})
