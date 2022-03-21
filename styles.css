@@ -46,6 +46,7 @@ nav ul {
     display: none;
     list-style-type: none;
     gap: 2rem;
+    font-size: 1.5rem;
 }
 
 nav>div {
@@ -70,12 +71,26 @@ nav a:hover, nav i:hover {
 }
 
 .toggled {
+    overflow: hidden;
     flex-basis: 100%;
     flex-grow: 1;
     text-align: right;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    animation: slideDown 2s ease 0s 1 normal forwards;
+
+}
+
+@keyframes slideDown {
+    from {
+        max-height: 0;
+    }
+
+    to {
+        max-height: 500px;
+    }
+
 }
 
 /* ---------- HEADER ---------- */
@@ -291,6 +306,7 @@ section h2 {
 
     nav ul {
         display: flex;
+        font-size: 1rem;
     }
 
     .fa-bars {
@@ -371,5 +387,6 @@ section h2 {
             transform: translateX(10px);
         }
     }
+
 
 }
