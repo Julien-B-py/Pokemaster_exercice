@@ -231,6 +231,10 @@ section h2 {
     cursor: pointer;
 }
 
+.pokemon>div {
+    position: relative;
+}
+
 /* ---------- SEE COMPLETE POKEDEX SECTION ---------- */
 
 .more {
@@ -267,6 +271,33 @@ section h2 {
 .socials a {
     text-decoration: none;
     color: #fff;
+}
+
+
+/* ---------- TOOLTIP ---------- */
+
+.tooltip {
+    position: absolute;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    opacity: 0;
+    transition: all .2s ease-out;
+}
+
+.tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
 }
 
 
@@ -354,6 +385,10 @@ section h2 {
 
     #scrollTop:hover .fa-angles-up {
         animation: jumpSmall 1s ease 0s infinite normal forwards;
+    }
+
+    .pokemon>div:hover .tooltip {
+        opacity: 1;
     }
 
     @keyframes jumpSmall {
