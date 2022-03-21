@@ -291,11 +291,23 @@ section h2 {
     }
 
     .pokemon img:hover {
-        transform: translateY(-10px);
+        animation: jump 0.2s ease 0s 1 normal forwards;
     }
 
     .more a:hover .fa-chevron-right {
         animation: lateralMove 2s ease 0s infinite normal forwards;
+    }
+
+    @keyframes jump {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
     }
 
     @keyframes lateralMove {
