@@ -148,6 +148,7 @@ section {
 
 #services {
     margin: auto;
+    overflow: hidden;
 }
 
 .icon {
@@ -202,6 +203,7 @@ section h2 {
     background-color: #f8f9fa;
     border-top: 1px solid #e2e2e2;
     padding-bottom: 3rem;
+    overflow: hidden;
 }
 
 .pokemons {
@@ -303,7 +305,7 @@ section h2 {
 
 /* ---------- AUTO SCROLL BUTTON ---------- */
 #scrollTop {
-    display: none;
+    /* display: none; */
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -316,6 +318,7 @@ section h2 {
     border: none;
     box-shadow: rgba(136, 136, 136, 0.56)0px 1px 3px 0px, rgba(70, 70, 70, 0.06) 0px 1px 2px 0px;
     border: 2px solid #c9c9c9;
+    transform: scale(0);
 }
 
 

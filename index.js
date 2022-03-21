@@ -18,9 +18,9 @@ const scrollTopButton = document.getElementById("scrollTop");
 // Hide or show the button depending on current scroll position
 window.onscroll = () => {
     if (document.documentElement.scrollTop > 100) {
-        scrollTopButton.style.display = "block";
+        gsap.to(scrollTopButton, { scale: 1, ease: Expo.easeOut })
     } else {
-        scrollTopButton.style.display = "none";
+        gsap.to(scrollTopButton, { scale: 0, ease: Expo.easeOut })
     }
 }
 
@@ -52,3 +52,69 @@ window.addEventListener('resize', resetNavLinksOnResize);
 navLinks.addEventListener("click", event => {
     navLinks.classList.remove("toggled");
 })
+
+
+// Target h1-h2 elements from heading section
+const h1Heading = document.querySelector("header h1");
+const h2Heading = document.querySelector("header h2");
+
+
+// Animate header then animate services section if not triggered via scroll
+var tlHeader = gsap.timeline({ defaults: { duration: 1, ease: Sine.easeOut }, onComplete: () => animServices() }).delay(.3);
+tlHeader.from(h1Heading, {
+    scale: 0
+}).from(h2Heading, {
+    scale: 0
+})
+
+// Target h2 elements and every single service from services section
+const h2Services = document.querySelector("#services h2");
+const services = document.querySelectorAll(".services>div");
+
+// Animate services section on scroll
+var tlServices = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#services",
+        toggleActions: "play none none none",
+        start: "center 67%",
+    }
+})
+
+// Different animations depending on the device
+// Tablet and desktop
+if (window.matchMedia("(min-width:800px)").matches) {
+
+    tlServices.from(h2Services, { yPercent: -300 })
+        .from(services[0], { autoAlpha: 0, xPercent: -50 })
+        .from(services[1], { autoAlpha: 0, yPercent: 50 }, "<")
+        .from(services[2], { autoAlpha: 0, xPercent: 50 }, "<")
+
+    // Mobile
+} else {
+
+    tlServices.from(h2Services, { yPercent: -300 })
+        .from(services[0], { autoAlpha: 0, yPercent: 50 })
+        .from(services[1], { autoAlpha: 0, yPercent: 50 }, "<.3")
+        .from(services[2], { autoAlpha: 0, yPercent: 50 }, "<.3")
+
+}
+
+// Services section manual animation when heading part is done
+const animServices = () => {
+    tlServices.play()
+}
+
+// Target h2 element from pokedex section
+const h2Pokedex = document.querySelector("#pokedex h2");
+
+// Animate pokedex section on scroll
+var tlPokedex = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#pokedex",
+        toggleActions: "play none none none",
+        start: "center bottom",
+    }
+})
+
+// Pokedex section timeline
+tlPokedex.from(h2Pokedex, { yPercent: -300 }).from(pokemons, { autoAlpha: 0, scale: 0, ease: Sine.easeOut })
