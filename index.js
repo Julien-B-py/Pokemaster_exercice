@@ -16,12 +16,20 @@ pokemons.forEach((pokemon, index) => {
 const scrollTopButton = document.getElementById("scrollTop");
 
 // Hide or show the button depending on current scroll position
-window.onscroll = () => {
+const manageScrollBtnVisibility = () => {
     if (document.documentElement.scrollTop > 100) {
         gsap.to(scrollTopButton, { scale: 1, ease: Expo.easeOut })
     } else {
         gsap.to(scrollTopButton, { scale: 0, ease: Expo.easeOut })
     }
+}
+
+// Call on page load
+manageScrollBtnVisibility();
+
+// Call on scroll
+window.onscroll = () => {
+    manageScrollBtnVisibility();
 }
 
 // Scroll to top when user clicks on the button
